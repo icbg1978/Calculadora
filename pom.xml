@@ -20,7 +20,7 @@
 
     <scm>
         <url>https://github.com/icbg1978/Calculadora</url>
-        <connection>scm:git:git://github.com/icbg1978/Calculadora.git</connection>
+        <connection>scm:git@github.com:icbg1978/Calculadora.git</connection>
     </scm>
     <developers>
         <developer>

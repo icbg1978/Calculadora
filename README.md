@@ -1,4 +1,11 @@
 # Calculadora
+```
+git clone https://github.com/icbg1978/Calculadora
+cd calculadora
+mvn validate
+mvn verify
+mvn clean install
+```
 # How to run
 
 ## From IDE
@@ -30,7 +37,7 @@ java -jar -Dspring.profiles.active=local
 2.Run app.
 
 3.Run tests in IntelliJ --> Run SuiteIT like a jUnit execution.
-# Calculadora Spring-Boot
+# MicroserviciocalculadoraApplicationTests
 Calculadora como micro-servicio (API) utilizando Spring-boot y Maven con funcionalidades básicas de sumar, restar, multiplicar y dividir.
 Leer el [enunciado] asociado el proyecto (/microserviciocalculadora/enunciado.md) para más información.
 
