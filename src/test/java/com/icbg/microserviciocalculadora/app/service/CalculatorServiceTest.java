@@ -3,6 +3,8 @@ package com.icbg.microserviciocalculadora.app.service;
 import org.junit.Before;
 import org.junit.Test;
 import java.math.BigDecimal;
+import java.math.BigInteger;
+
 import static org.junit.Assert.assertEquals;
 
 public class CalculatorServiceTest {
@@ -18,9 +20,9 @@ public class CalculatorServiceTest {
     public void OperationOk(){
         BigDecimal firstNumber = new BigDecimal(3);
         BigDecimal secondNumber = new BigDecimal(5);
-        Double expected= new BigDecimal(8).doubleValue();
+        BigDecimal expected= new BigDecimal(8);
         String operation = "suma";
-        Double obtain = this.calculatorService.calculate(operation , firstNumber , secondNumber );
+        BigDecimal obtain = this.calculatorService.calculate(operation , firstNumber , secondNumber );
 
         assertEquals(expected, obtain);
     }
@@ -29,7 +31,7 @@ public class CalculatorServiceTest {
     public void OperationKo(){
         BigDecimal firstNumber = new BigDecimal(3);
         BigDecimal secondNumber = new BigDecimal(5);
-        Double expected= new BigDecimal(8).doubleValue();
+       // BigDecimal expected= new BigDecimal(8);
         String operation = "multiplicacion";
         try {
             this.calculatorService.calculate(operation, firstNumber, secondNumber);

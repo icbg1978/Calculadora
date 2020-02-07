@@ -15,5 +15,5 @@ public interface ICalculatorService {
      * @return el resultado de la operación (depende del tipo de operación). Se ha decidido que valor doble
      *              es más que suficiente para representar la operación
      */
-    double calculate(String operation, BigDecimal firstNumber, BigDecimal secondNumber);
+    BigDecimal calculate(String operation, BigDecimal firstNumber, BigDecimal secondNumber);
 }

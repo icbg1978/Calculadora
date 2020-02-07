@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -28,7 +29,7 @@ public class MicroserviciocalculadoraApplicationTests {
      * @return
      * @throws URISyntaxException
      */
-    private ResponseEntity<Double> calculate(String operation, double primero, double segundo) throws URISyntaxException {
+    private ResponseEntity<BigDecimal> calculate(String operation, double primero, double segundo) throws URISyntaxException {
         RestTemplate restTemplate = new RestTemplate();
 
         final String baseUrl = "http://localhost:" + randomServerPort +
@@ -36,14 +37,14 @@ public class MicroserviciocalculadoraApplicationTests {
                 "&segundo=" + segundo;
         URI uri = new URI(baseUrl);
 
-        ResponseEntity<Double> resultado = restTemplate.getForEntity(uri, Double.class);
+        ResponseEntity<BigDecimal> resultado = restTemplate.getForEntity(uri, BigDecimal.class);
         return resultado;
     }
 
     @Test
     public void testSumaConExito() throws URISyntaxException {
 
-        ResponseEntity<Double> resultado = calculate("suma", 4, 6);
+        ResponseEntity<BigDecimal> resultado = calculate("suma", 4, 6);
 
         //Comprueba el resultado
         Assert.assertEquals(200, resultado.getStatusCodeValue());
@@ -53,7 +54,7 @@ public class MicroserviciocalculadoraApplicationTests {
     @Test
     public void testRestaConÉxito() throws URISyntaxException {
 
-        ResponseEntity<Double> resultado = calculate("resta", 4, 6);
+        ResponseEntity<BigDecimal> resultado = calculate("resta", 4, 6);
 
         //Comprueba el resultado
         Assert.assertEquals(200, resultado.getStatusCodeValue());
